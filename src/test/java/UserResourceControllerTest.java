@@ -27,7 +27,7 @@ class UserResourceControllerTest {
 
     @AfterEach
     void logout() {
-        user.setLogged(false);
+        user.setLogged();
     }
 
     @Test
@@ -40,7 +40,7 @@ class UserResourceControllerTest {
         Assertions.assertTrue(controller.login(user, inputPassword));
         Assertions.assertFalse(controller.login(user, wrongPassword));
         Assertions.assertFalse(controller.login(new User("testowy", new LinkedList<>()), "123"));
-        Assertions.assertEquals(true, user.getLogged(true));
+        Assertions.assertEquals(true, user.getLogged());
     }
 
     @Test

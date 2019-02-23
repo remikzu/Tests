@@ -30,5 +30,6 @@ public class UserResourceController {
                 hasAccess = true;
             }
         }
+        return false;
     }
 }
